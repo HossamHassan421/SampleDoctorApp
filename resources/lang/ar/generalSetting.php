@@ -1,0 +1,28 @@
+<?php
+
+return array (
+  'edit' => 'تعديل',
+  'generalSetting' => 'الإعدادات العامة',
+  'save' => 'حفظ',
+  'update' => 'تعديل',
+  'vat_percentage' => 'النسبة المئوية للضرائب',
+  'emergency_fees' => 'رسوم الكشف الطارئ',
+  'emergency_time_start' => 'بداية وقت الكشف الطارئ',
+  'emergency_time_end' => 'نهاية وقت الكشف الطارئ',
+  'payment_gateway_percentage_fees' => 'النسبة المئوية لبوابة الدفع الألكترونية',
+  'doctor_percentage_fees' => 'النسبة المئوية للطبيب',
+  'groomer_percentage_fees' => 'النسبة المئوية لمختصي العناية',
+  'emergency_visits_times' => 'مواعيد الكشوفات الطارئة',
+  'percentages_values' => 'قيم النسب المئوية',
+  'visits_fees' => 'رسوم الزيارات',
+  'first_pet_visit_fees' => 'رسوم كشف أول اليف لكشوفات الصحة',
+  'other_pet_visit_fees' => 'رسوم كشف باقى الحيوانات الاليفة لكشوفات الصحة / لكل أليف',
+  'first_pet_emergency_visit_fees' => 'رسوم كشف أول اليف للكشوفات الطارئة',
+  'other_pet_emergency_visit_fees' => 'رسوم كشف باقى الحيوانات الاليفة للكشوفات الطارئة / لكل أليف',
+  'mobile_app_data_helper' => 'معلومات لتطبيق الهاتف',
+  'examination_service_name_en' => 'اسم خدمة الفحص بالانجليزي',
+  'examination_service_name_ar' => 'اسم خدمة الفحص بالعربية',
+  'examination_subcategory_service_name_en' => 'اسم فئة الخدمة الفرعية بالإنجليزية',
+  'examination_subcategory_service_name_ar' => 'اسم فئة الخدمة الفرعية بالعربية',
+  'examination_subcategory_image' => 'صورة فئة الخدمة الفرعية',
+);

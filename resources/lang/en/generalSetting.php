@@ -1,0 +1,28 @@
+<?php
+
+return array (
+  'doctor_percentage_fees' => 'Doctor Percentage Fees',
+  'edit' => 'Edit',
+  'emergency_fees' => 'Emergency Fees',
+  'emergency_time_end' => 'End time of emergency appointments',
+  'emergency_time_start' => 'Start time of emergency appointments',
+  'generalSetting' => 'General Settings',
+  'groomer_percentage_fees' => 'Groomer Percentage Fees',
+  'payment_gateway_percentage_fees' => 'Payment Gateway Percentage Fees',
+  'save' => 'Save',
+  'update' => 'Update',
+  'vat_percentage' => 'VAT percentage',
+  'emergency_visits_times' => 'Emergency Visits Times',
+  'examination_service_name_ar' => 'Examination Service Name (AR)',
+  'examination_service_name_en' => 'Examination Service Name (EN)',
+  'examination_subcategory_service_name_ar' => 'Examination ٍService Sub Category Name (EN)',
+  'examination_subcategory_service_name_en' => 'Examination ٍService Sub Category Name (AR)',
+  'examination_subcategory_image' => 'Examination ٍService Sub Category Image',
+  'first_pet_emergency_visit_fees' => 'First Pet Emergency Visit Fees',
+  'first_pet_visit_fees' => 'First Pet Visit Fees',
+  'other_pet_emergency_visit_fees' => 'Others Pets Emergency Visit Fees / Per Pet',
+  'other_pet_visit_fees' => 'Others Pets Visit Fees / Per Pet',
+  'mobile_app_data_helper' => 'Informations To Mobile App',
+  'percentages_values' => 'Percentages Values',
+  'visits_fees' => 'Visits Fees',
+);
