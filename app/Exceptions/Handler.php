@@ -32,5 +32,37 @@ class Handler extends ExceptionHandler
         });
     }
 
-
+    public function render($request, Throwable $e)
+    {
+        if ($e instanceof NotFoundHttpException) {
+            return response()->json([
+                'status' => 404,
+                'message' => trans('system.page_not_found')
+            ], 404);
+        } elseif ($e instanceof ValidationException) {
+            return response()->json([
+                'status' => 400,
+                'errors' => $e->errors()
+            ], 400);
+        } elseif ($e instanceof AuthenticationException) {
+            return response()->json([
+                'status' => 403,
+                'message' => trans('system.unauthenticated')
+            ], 403);
+        } elseif ($e instanceof AuthorizationException) {
+            return response()->json([
+                'status' => 401,
+                'message' => trans('system.unauthorized')
+            ], 401);
+        } else {
+            $pathInfo = $request->getPathInfo();
+            $message = $e->getMessage();
+            Log::error("$message -@ $pathInfo");
+            return response()->json([
+                'status' => 500,
+                'message' => trans('system.internal_server_error')
+            ], 500);
+        }
+        return parent::render($request, $e);
+    }
 }

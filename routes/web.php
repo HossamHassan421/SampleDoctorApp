@@ -3,8 +3,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::namespace('App\Http\Controllers')->middleware(['web', 'auth:admins'])->group(function () {
-    Route::get('/', 'HomeController@index')->name('home');
-
     //--------------------Doctor-------------------//
     Route::get('doctor', 'DoctorController@listing')->name('doctor-listing')->middleware('can:doctor-access');
     Route::get('doctor/create', 'DoctorController@create')->name('doctor-create')->middleware('can:doctor-add');
