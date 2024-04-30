@@ -20,6 +20,7 @@ class DoctorService extends BaseService
     public static function login($request)
     {
         $mobile = $mobile0 = $request->mobile;
+        // Start with 0 if not found
         if (substr($mobile, 0, 1) !== "0") {
             $mobile0 = str_pad($mobile, strlen($mobile) + 1, "0", STR_PAD_LEFT);
         }
@@ -96,14 +97,11 @@ class DoctorService extends BaseService
     public static function updateProfile($request)
     {
         $doctor = auth('api-doctor')->user();
-        $ready_to_save = false;
         if ($request->has('name')) {
             $doctor->name = $request->name;
-            $ready_to_save = true;
         }
         if ($request->has('gender')) {
             $doctor->gender = $request->gender;
-            $ready_to_save = true;
         }
         if ($request->has('email')) {
             $request->validate([
@@ -115,9 +113,7 @@ class DoctorService extends BaseService
 
             $doctor->email = $request->email;
         }
-        if ($ready_to_save) {
-            $doctor->save();
-        }
+        $doctor->save();
         return $doctor;
     }
 
@@ -125,10 +121,12 @@ class DoctorService extends BaseService
     {
         $doctor = auth('api-doctor')->user();
         $mobile = $request->mobile;
+        // Start with 0 if not found
         if (substr($mobile, 0, 1) !== "0") {
             $mobile = str_pad($mobile, strlen($mobile) + 1, "0", STR_PAD_LEFT);
         }
 
+        // Save the new mobile into temporary field first before validate OTP
         $doctor->temporary_mobile = $mobile;
         $doctor->save();
         $doctorOtp = self::generateOtp($doctor);
@@ -163,6 +161,7 @@ class DoctorService extends BaseService
     public static function updateProfilePicture($request)
     {
         $doctor = auth('api-doctor')->user();
+        // Upload doctor profile picture and delete the old one if found
         $image = self::uploadImage($request->image, 'uploads/images/doctor', $doctor->image);
         $doctor->image = $image;
         $doctor->save();

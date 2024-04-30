@@ -40,10 +40,16 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'admins' => [
-            'driver' => 'session',
-            'provider' => 'admins',
+        'api' => [
+            'driver' => 'passport',
+            'provider' => 'users',
+            'hash' => false,
         ],
+        'api-doctor' => [
+            'driver' => 'passport',
+            'provider' => 'doctors',
+        ],
+
     ],
 
     /*
@@ -68,9 +74,9 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-        'admins' => [
+        'doctors' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Doctor::class,
         ],
 
         // 'users' => [
@@ -101,8 +107,8 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
-        'admins' => [
-            'provider' => 'admins',
+        'doctors' => [
+            'provider' => 'doctors',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
